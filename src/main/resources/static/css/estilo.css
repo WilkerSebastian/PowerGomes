@@ -1,0 +1,134 @@
+body{
+
+    background-color: rgb(231, 231, 231);
+
+}
+
+#cadastro {
+
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    margin-top: 3%;
+    text-align: center;
+
+    max-width: 500px;
+
+}
+
+h2{
+
+    margin-top: 2%;
+    margin-left: 10%;
+
+}
+
+#cadastro label{
+
+    color: rgb(34, 33, 33);
+
+}
+
+#cadastro input{
+
+    border: solid 1px black;
+
+}
+
+#descricao{
+
+	border: solid 1px black;
+
+}
+
+#classificacao{
+
+	border: solid 1px black;
+
+}
+
+#desc{
+
+    max-width: 300px;
+
+}
+
+#grupo {
+
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 900px;
+    border: solid 1px black;
+
+}
+
+#cabecalho{
+
+    background-color: rgb(71, 71, 71);
+
+}
+
+#cabecalho a{
+
+    color: rgb(34, 34, 34);
+    text-decoration: none;
+
+}
+
+#centralizar{
+
+	margin-top: 10%;
+	text-align: center;
+    margin-left: 40%;
+    max-width: 300px;
+
+}
+
+#sub{
+	
+	margin-left: 2%;
+	
+}
+
+#stdi{
+	
+	border: solid 2px black;
+	
+}
+
+#stdo{
+	
+	font-family: serif;
+	color: black;
+	
+}
+
+#tabela{
+	
+	background-color: white;
+	
+}
+
+#bloco{
+	
+	padding: 20px;
+	
+}
+
+.titulo{
+	
+	margin-top: 5%;
+	text-align: center;
+	font-family: Helvetica, sans-serif;
+	
+}
+
+#aviso{
+	
+	displaY: block;
+	color: red;
+	font-family: impact;
+	
+}

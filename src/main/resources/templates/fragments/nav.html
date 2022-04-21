@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<nav th:fragment="nav" class="navbar navbar-expand-lg navbar-light bg-light">
+		<ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/powergomes.com/}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/powergomes.com/adicionar}">Adicionar Jogo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/powergomes.com/lista}">Listagem de jogos</a>
+            </li>
+        </ul>
+	</nav>
+</body>
+</html>
