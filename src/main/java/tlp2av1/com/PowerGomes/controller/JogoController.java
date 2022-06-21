@@ -1,10 +1,14 @@
 package tlp2av1.com.PowerGomes.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
 
-import tlp2av1.com.PowerGomes.orm.Jogo;
+import tlp2av1.com.PowerGomes.model.Avaliacao;
+import tlp2av1.com.PowerGomes.model.Jogo;
+import tlp2av1.com.PowerGomes.repository.AvaliacaoRepository;
 import tlp2av1.com.PowerGomes.repository.JogoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,24 +21,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/powergomes.com")
+@RequestMapping("/jogo")
 public class JogoController {
  
     @Autowired
 	JogoRepository jogoRepository;
 
-    @RequestMapping("/")
-    public String  homeJogo(Model model){
-
-        model.addAttribute("jogos" , jogoRepository.findAll());
-
-        return "home";
-
-    }
+	@Autowired
+	AvaliacaoRepository avaliacaoRepository;
 
     @RequestMapping("/lista")
 	public String listarJogo(Model model) {
-		model.addAttribute("jogos", jogoRepository.findAll());
+
+		List<Jogo> jogos = jogoRepository.findAll();
+		List<Avaliacao> avaliacoes = avaliacaoRepository.findAll();
+
+		model.addAttribute("jogos", jogos);
+		model.addAttribute("avaliacoes", avaliacoes);
 		
 		return "lista";		
 	}
@@ -51,15 +54,15 @@ public class JogoController {
 			return "formularioJogo";
 		}
 		jogoRepository.save(jogo);
-		return "redirect:/powergomes.com/lista";
+		return "redirect:/jogo/lista";
 	}
 
-	@GetMapping("/deletar/jogo/{id}")
+	@GetMapping("/deletar/{id}")
 	public String deleteJogo(@PathVariable("id") long id, Model model) {
 		Jogo jogo = jogoRepository.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("Id inválido:" + id));
 		jogoRepository.delete(jogo);
-	    return "redirect:/powergomes.com/lista";
+	    return "redirect:/jogo/lista";
 	}
 
 	@GetMapping("/editar/{id}")

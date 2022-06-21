@@ -1,6 +1,15 @@
-body{
+html , body , main{
 
-    background-color: rgb(231, 231, 231);
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(71, 71, 71);
+    color: white;
+
+}
+
+#tabela span{
+
+    text-align: center;
+    font-size: 18px;
 
 }
 
@@ -13,9 +22,8 @@ body{
     margin: auto;
     margin-top: 3%;
     text-align: center;
-
+    padding-bottom: 2%;
     max-width: 500px;
-
 }
 
 h2{
@@ -27,7 +35,7 @@ h2{
 
 #cadastro label{
 
-    color: rgb(34, 33, 33);
+    color: rgb(235, 235, 235);
 
 }
 
@@ -72,7 +80,6 @@ h2{
 
 #cabecalho a{
 
-    color: rgb(34, 34, 34);
     text-decoration: none;
 
 }
@@ -101,7 +108,6 @@ h2{
 #stdo{
 	
 	font-family: serif;
-	color: black;
 	
 }
 
@@ -119,7 +125,7 @@ h2{
 
 .titulo{
 	
-	margin-top: 5%;
+	padding-top: 5%;
 	text-align: center;
 	font-family: Helvetica, sans-serif;
 	
@@ -131,4 +137,42 @@ h2{
 	color: red;
 	font-family: impact;
 	
+}
+
+.conteudo{
+
+    min-height: 1000px;
+
+}
+
+.tabela-corpo{
+
+    border: 1px solid rgb(36, 36, 36);
+
+}
+
+footer , header{
+
+    width: 100%;
+
+}
+
+main{
+
+    padding-bottom: 2%;
+
+}
+
+.form-ava{
+
+    padding-top: 1%;
+    margin-left: 25%;
+    max-width: 50%;
+
+}
+#carta{
+
+    border-radius: 1px;
+    border: 1px solid black;
+
 }

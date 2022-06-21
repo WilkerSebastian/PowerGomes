@@ -1,15 +1,19 @@
-package tlp2av1.com.PowerGomes.orm;
+package tlp2av1.com.PowerGomes.model;
 
 import java.util.Date;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -46,6 +50,10 @@ public class Jogo {
     private String tipo;
 
     private String imagem;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "jogo", fetch = FetchType.EAGER)
+	@Valid
+	private Avaliacao avaliacao;
 
     public Jogo() {
         
@@ -138,7 +146,15 @@ public class Jogo {
         this.empresa = empresa;
     }
 
+    public Avaliacao getAvaliacao() {
+        return avaliacao;
+    }
 
+    public void setAvaliacao(Avaliacao avaliacao) {
+        this.avaliacao = avaliacao;
+    }
+
+    
     
 
 }

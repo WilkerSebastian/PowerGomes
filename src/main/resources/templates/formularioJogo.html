@@ -2,35 +2,24 @@
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" th:href="@{/bootstrap-5.1.3-dist/css/bootstrap.min.css}">
-
-    <script th:src="@{/jquery-3.6.0-dist/jquery-3.6.0.min.js}"></script>
-
-    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+    
+    <div th:replace="fragments/base :: head"></div>
 
     <title>Power Gomes</title>
 </head>
 
 <body>
 
-    <header id="cabecalho">
-
-        <div th:insert="fragments/nav :: nav"></div>
-
-    </header>
+    <header th:replace="fragments/base :: header"></header>
     <main>
 
         <h1 class="titulo">Cadastro do Jogo</h1>
 
-        <form th:action="@{/powergomes.com/salvar}" id="cadastro" method="post" th:object="${jogo}">
+        <form th:action="@{/jogo/salvar}" id="cadastro" method="post" th:object="${jogo}">
             <div class="mb-3">
                 <label th:for="nome" class="form-label">Nome</label>
                 <span id="aviso" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
-                <input type="text" class="form-control" id="nome" th:field="*{nome}" placeholder="Dragon's Dogman">
+                <input type="text" class="form-control" id="nome" th:field="*{nome}" placeholder="Dragon's Dogma">
             </div>
             <div class="mb-3">
                 <label th:for="dataLancamento" class="form-label">Data Lançamento</label>
@@ -73,6 +62,7 @@
                 <label th:for="imagem" class="form-label">URL da imagem</label>
                 <span id="aviso" th:if="${#fields.hasErrors('imagem')}" th:errors="*{imagem}"></span>
                 <input type="text" class="form-control" id="imagem" th:field="*{imagem}">
+                <img id="img-forms" width="250" height="250">
             </div>
             <button type="submit" class="btn btn-primary">Registrar</button>
 
@@ -80,8 +70,8 @@
 
     </main>
 
-    <script th:src="@{/bootstrap-5.1.3-dist/js/bootstrap.min.js}"></script>
-    <script th:src="@{/js/main.js}"></script>
+    <div th:replace="fragments/base :: footer-js"></div>
+    <script th:src="@{/js/forms.js}"></script>
 
 </body>
 
