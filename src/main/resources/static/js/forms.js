@@ -10,11 +10,11 @@ function upImg() {
 
         if (inputImg == "") {
 
-            img.style.visibility = "hidden"
+            img.style.display = "none"
 
         } else {
 
-            img.style.visibility = "visible"
+            img.style.display = "block"
             img.src = inputImg
 
         }

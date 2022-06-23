@@ -15,9 +15,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
@@ -37,16 +39,19 @@ public class Jogo {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataLancamento;
 
-	@Min(value = 0, message = "{validation.pontos.min}") 
+	@Range(min = 0, message = "O valor deve ser maior que 0") 
 	private double valor;
 
     @Column(columnDefinition="text")
+    @Size(min = 1,message = "A descrição deve ser informado")
     private String descricao;
 
+    @Size(min = 1,message = "A empresa deve ser informado")
     private String empresa;
 
     private int classificacao;
 
+    @Size(min=1,message = "O gênero deve ser informado")
     private String tipo;
 
     private String imagem;

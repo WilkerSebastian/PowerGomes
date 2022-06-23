@@ -25,14 +25,14 @@ public class Avaliacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "O nome deve ser informado")
+    @Size(min=1,message = "O nome deve ser informado")
     private String nome;
 
     @NotNull(message = "A data deve ser informada")
     @Range(min = 0, max = 10 , message = "A nota deve ter no máximo 10 pontos e no mínimo 0")
     private int nota;
 
-    @NotNull(message = "A data dever ser informado")
+    @Size(min=1,message = "A data dever ser informado")
     private String review;
 
     @Basic
@@ -70,7 +70,7 @@ public class Avaliacao {
 
     public Date getDatareview() {
         return datareview;
-    }
+    } 
 
     public void setDatareview(Date datareview) {
         this.datareview = datareview;

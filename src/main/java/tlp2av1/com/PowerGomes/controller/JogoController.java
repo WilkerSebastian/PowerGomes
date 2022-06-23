@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/jogo")
@@ -49,8 +50,9 @@ public class JogoController {
 	}
 	
 	@PostMapping("/salvar")
-	public String salvarJogo(@Valid Jogo jogo, BindingResult result) {
+	public String salvarJogo(@Valid Jogo jogo, BindingResult result , RedirectAttributes attributes) {
 		if (result.hasErrors()) {
+			System.out.println("\n\n\n\n\nerros: " + result.getFieldErrors() + "\n\n\n\n\n");
 			return "formularioJogo";
 		}
 		jogoRepository.save(jogo);

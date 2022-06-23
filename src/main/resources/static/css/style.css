@@ -1,5 +1,6 @@
 html , body , main{
 
+    width: 100%;
     font-family: 'Times New Roman', Times, serif;
     background-color: rgb(71, 71, 71);
     color: white;
@@ -114,11 +115,25 @@ h2{
 #tabela{
 	
 	background-color: white;
+	width: 100%;
+
+}
+
+#tabela thead{
+	
+	width: 100%;
+	
+}
+
+#tabela tbody{
+	
+	width: 100%;
 	
 }
 
 #bloco{
 	
+    width: 100%;
 	padding: 20px;
 	
 }
@@ -159,7 +174,14 @@ footer , header{
 
 main{
 
+    min-height: 1000px;
     padding-bottom: 2%;
+
+}
+
+#img-forms {
+
+    margin-left: 25%;
 
 }
 
